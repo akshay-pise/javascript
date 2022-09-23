@@ -1,0 +1,82 @@
+1. what is function..?
+ function is block of code or function is used wrap the code.
+ syntax: 
+      function functionName(){
+                                      statement/condition
+                                }
+                                
+2. type of function.?
+-> function has two type of function 
+            1. simple function      
+            -> a function has no parameter
+                  syntax:- function functionname(){
+                        condition/statement;
+                  }
+
+                  you can write with two Way
+                        I) simple function with no return value.
+                        eg.
+                        var num1=8, num2=5, addition;
+                        function funname(){
+                              addition=num1+num2;
+                        }
+                        console.log(funname);
+
+                        II) simple function with return value.
+                        eg. 
+                        var num1=8, num2=5,;
+                        function funname(){
+                              return num1+num2;
+                        }
+                        console.log(funname);
+
+            2. function with parameter
+            -> a function with parameter has pass the value with  in function.
+            note:- if you have pass nth number of  parameter in function then you pass the n number of value of parameter
+                        ( function functionNm (parameter1,.... ,parameterN){
+
+                        }
+                        
+
+                        )
+            syntax;
+            function functionNm(parameter1,parameter2)
+            {
+                  parameter1
+                  parameter2
+            } 
+            functionNm(value1, value2);
+
+            you can write with two way
+            I) parameter function with no return value.
+            eg. function funame(add1, add2){
+                  var result=add1+add2;   
+                  console.log(result);
+            }
+            //call
+            funame(20,30);
+
+            II) parameter function with return value.
+            eg.
+            function funame(add1, add2){
+                  return add1+add2;
+            }
+            
+            //call
+            funame(20,30);
+            console.log(funame);
+3.how to create html element using js dyanamicly.?
+-there are step to create 
+      first we need to create element so you can acess document.getElementById("parent/target-element-name") and store in one variable.
+      thensecond we need element name which one create like document.createElement("create-element-name)
+      and last appendChild this for create element or merge two step using appendChild keyword (ul.appendChild(li);)
+      (target element -> createElement-name ->appendChild)
+      
+      -i.e. var ul = document.getElementById("myUL");
+                  "myUl" -this location where you want to create element. and i store in ul variable
+            var li = document.createElement("li");
+                  "li" -this is element name which creating and sote in li variable.
+            ul.appendChild(li); 
+                  appendChild- this is create child element(li) inside to  parent element(ul)
+
+
