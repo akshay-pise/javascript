@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container p-5">
+        <div class="row p-3">
+            <div class="col"><label for="">first Name</label>
+                <input type="text" id="fname" class="form-control">
+            </div>
+            <div class="col"><label for="">last Name</label>
+                <input type="text" id="lname" class="form-control">
+            </div>
+        </div>
+        <div class="row p-3">
+            <div class="col">
+                <button onclick="saveinfo()" class="btn btn-primary">Save</button>
+            </div>
+            <div class="col">
+                <button onclick="removeinfo()" class="btn btn-secondary">remove</button>
+            </div>
+            <div class="col">
+                <button onclick="clearinfo()" class="btn btn-danger">clear all</button>
+            </div>
+            <div class="col">
+                <button onclick="showalert()" class="btn btn-info">show</button>
+            </div>
+
+
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        var infoobject = {
+             finame : "",
+             laname  :""
+        }
+        function saveinfo() {
+            // var firstname = document.getElementById("fname").value;
+            // sessionStorage.setItem("fname", firstname);
+            infoobject.finame=document.getElementById("fname").value;
+            // var lastname = document.getElementById("lname").value;
+            // sessionStorage.setItem("lname", lastname);
+            infoobject.laname=document.getElementById("lname").value
+            infoobject=JSON.stringify(infoobject);
+            LocalStorage.setItem("name",infoobject);
+        }
+        function showalert() {
+            debugger;
+            // var firstname = document.getElementById("fname").value;
+            // sessionStorage.getItem("fname");
+            // var lastname = document.getElementById("lname").value;
+            // sessionStorage.getItem("lname");
+            // alert(sessionStorage.getItem("lname"))
+            var objtostring=sessionStorage.getItem("name");
+            var infoobject=JSON.parse(objtostring);
+            alert(infoobject.finame);
+        }
+        function removeinfo() {
+            var firstname = document.getElementById("fname").value;
+            sessionStorage.removeItem("fname");
+        }
+        function clearinfo() {
+            sessionStorage.clear();
+        }
+
+    </script>
+</body>
+
+</html>
