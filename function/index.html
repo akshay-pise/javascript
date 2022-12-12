@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre {
+            font-size: 87.5%;
+            padding: 10px;
+            color: #ffff;
+            background-color: #000;
+            width: 50%;
+        }
+        body{
+            padding-left: 5rem;
+        }
+    </style>
+</head>
+
+<body >
+    <div id="result" style="color: red; font-weight:bold; text-align: center;">
+        result inside console log
+    </div>
+    <dl>
+        <dt>
+            <h4>Pure Function</h4>
+        </dt>
+        <dd>Pure function are function that accept an input and return a value
+            without modifying any data outside its scope (side effects).
+        </dd>
+        <dd>predictable and without side-effects</dd>
+        <dd>pure function doesn't change outside scope value</dd>
+        <dd>Don't modify any variable</dd>
+        <pre>
+            let y = 10;
+            function pure(a) {
+                return a + 1;
+            }
+
+            console.log(pure(y));  ===> 11
+            console.log(pure(y));  ===> 11
+            console.log(pure(y));  ===> 11
+        </pre>
+
+        <dt>
+            <h4>Impure Function</h4>
+        </dt>
+        <dd>Impure function are function that accept an input and return a value
+            with modifying any data outside its scope (side effects).
+        </dd>
+        <dd>not-predictable and with side-effects</dd>
+        <dd>Impure function change outside scope value</dd>
+        <pre>
+            let x = 10;
+            function impure() {
+                console.log(x);
+                x++;
+            }
+
+            impure();   ===> 11   
+            impure();   ===> 12
+            impure();   ===> 13
+            impure();   ===> 14
+        </pre>
+    </dl>
+
+    <script>
+        console.log("\n Pure function example\n")
+        let y = 10;
+        function pure(a) {
+            return a + 1;
+
+        }
+        console.log("the pure function give as input and return as same input means its did not change outside the scope value it's only working on inside the return the function result.")
+        console.log(pure(y));
+        console.log(pure(y));
+        console.log(pure(y));
+
+        console.log("\n Impure function \n")
+        let x = 10;
+        function impure() {
+            console.log(x);
+            x++;
+        }
+        console.log("the inpure function every time his return a new value bcz its modify the outside of scope value")
+        impure();
+        impure();
+        impure();
+        impure();
+    </script>
+</body>
+
+</html>
