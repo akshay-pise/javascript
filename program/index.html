@@ -1,40 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+
+  <body>
+    <div>
+      <p>program for reverse number print</p>
+    </div>
+    <div>
+      <dl>
+        <dt>
+          <h4>map function</h4>
+        </dt>
+        <dd>
+          map function is give as array and retrun new array ith performing
+          operation
+        </dd>
+        <dd>Syntax:- three parameter as array value, index value, and array</dd>
+        <pre>
+ array.map((value, index, array)=>{
+    console.log(value,index,array); // its retrun value index number and array
+       return value;
+  })
+    </pre>
+        <dd>Syntax:- two parameter as array value, index value</dd>
+        <pre>
+ array.map((value, index)=>{
+    console.log(value,index); // its retrun value index number of array
+      return value;
+  })
+</pre>
+        <dd>Syntax:- One parameter as array value</dd>
+        <pre>
+ array.map((value)=>{
+  console.log(value); // its retrun value of a array
+    return value;
+})
+</pre>
+    </dl>
+    </div>
+
     <script>
+      function reverseWords(str) {
+        let reverseWordArr = str
+          .split(" ")
+          .map((word) => word.split("").reverse().join(""));
+        return reverseWordArr.join(" ");
+      }
+      // console.log(reverseWords("hii my name akshay"));
 
-function reverseWords(str) {
-  let reverseWordArr = str.split(" ").map(word => word.split("").reverse().join(""));
-  return reverseWordArr.join(" ");
-}
-// console.log(reverseWords("hii my name akshay"));
+      // array="hi my name";
+      // var revspa= array.split(" ");
+      // // console.log(rev);
+      // var rev= revspa.map(word=>word.split(""));
+      // console.log(rev);
 
-array="hi my name";
-var revspa= array.split(" ");
-// console.log(rev);
-var rev= revspa.map(word=>word.split(""));
-// console.log(rev);
+      arra = "Hi My Name Akshay";
+      console.log(arra);
+      const array = arra.split(" ");
+      for (var i = 0; i <= array.length - 1; i++) {
+        const valu = array[i].split("");
+        console.log(valu);
+        //   for(var i=valu.length-1; i>=0;i--){
+        //     console.log(valu[i]);
 
+        //   }
 
-
-arra="Hi My Name Akshay";
-console.log(arra)
-const array = arra.split(" ");
-for(var i=0; i<=array.length-1;i++){
-  const valu=array[i].split("");
-  console.log(valu);
-//   for(var i=valu.length-1; i>=0;i--){
-//     console.log(valu[i]);
-    
-//   }
-  
-}
+        //map function
+      }
     </script>
-</body>
+  </body>
 </html>
